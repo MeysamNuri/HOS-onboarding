@@ -1,0 +1,283 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.plans-container {
+  margin: 16px 0;
+}
+
+.desktop-package-card {
+  background: #fff;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 8px 10px rgba(0, 0, 0, .1);
+
+  transition: .25s;
+
+  @media (max-width: 768px) {
+
+    margin: 0 3px;
+
+
+
+  }
+
+  &:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, .3);
+
+  }
+
+
+
+  &__top-line {
+    height: 6px;
+
+  }
+
+  &__content {
+
+    flex: 1;
+
+    padding: 16px;
+
+
+    display: flex;
+
+    flex-direction: column;
+
+  }
+
+  &__header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+  }
+
+  %basic-badge {
+
+
+    font-size: 12px;
+
+    padding: 5px 10px;
+
+    border-radius: $radius-sm;
+
+    white-space: nowrap;
+  }
+
+  &__badge {
+    @extend %basic-badge;
+    background: $blue-light;
+
+
+
+  }
+
+  &__badge2 {
+    @extend %basic-badge;
+    background: $pink-badge;
+    color: $default-button-hover;
+  }
+
+  &__title {
+
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: right;
+
+    .agent-badge {
+      color: $blue-badge;
+      font-size: $text-xs;
+    }
+
+
+    h3 {
+
+      margin: 0;
+      padding-bottom: 6px;
+      font-size: $text-sm;
+
+      font-weight: 500;
+
+    }
+
+    span {
+
+      color: $sub-text;
+
+      font-size: $text-md;
+
+    }
+
+  }
+
+  &__price {
+
+    margin-top: 50px;
+
+    text-align: left;
+
+  }
+
+  &__mobile-price {
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .old-price {
+
+    font-weight: 600;
+
+    text-decoration: line-through;
+
+    font-size: $text-xs;
+
+  }
+
+  .new-price {
+
+    font-size: $text-sm;
+
+    font-weight: 600;
+
+    margin-top: 4px;
+
+  }
+
+  .discount {
+    color: $red-main;
+    font-size: $text-xs;
+    font-weight: 600;
+    margin-top: 4px;
+
+    &__text {
+      color: $red-sub-text;
+    }
+  }
+
+  .details-modal {
+    color: $red-main;
+    text-align: right;
+    font-size: $text-md;
+    font-weight: 600;
+    cursor: pointer;
+
+    span {
+      margin-left: 8px;
+    }
+
+    img {
+      margin-left: 8px;
+    }
+  }
+
+  .divider {
+
+    margin: 20px auto;
+
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    background: linear-gradient(to right,
+        #ff2b2b 0%,
+        #ff2b2b 45%,
+        rgba(255, 43, 43, 0.2) 75%,
+        transparent 100%);
+
+
+  }
+
+  .divider-left {
+
+    margin: 10px auto;
+
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    background: linear-gradient(to left,
+        #ff2b2b 0%,
+        #ff2b2b 45%,
+        rgba(255, 43, 43, 0.2) 75%,
+        transparent 100%);
+
+
+  }
+
+  &__features {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+    gap: 10px;
+
+  }
+
+  .description {
+    font-size: $text-xs;
+
+    color: $sub-text;
+  }
+
+  .feature {
+
+    display: flex;
+
+    align-items: end;
+    font-size: $text-sm;
+    justify-content: space-between;
+
+    color: $sub-text;
+
+    p {
+      font-size: $text-xs;
+
+      span {
+        color: black;
+        font-weight: 600;
+      }
+    }
+
+    .anticon {
+
+      color: $green-text;
+
+      font-size: 20px;
+
+    }
+
+
+  }
+
+  .text-button {
+    color: $red-main;
+    text-align: left;
+    font-size: $text-md
+  }
+
+}
+
+@media (max-width:360px) {
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: start !important;
+    span{
+      margin-bottom: 8px;
+    }
+
+  }
+}

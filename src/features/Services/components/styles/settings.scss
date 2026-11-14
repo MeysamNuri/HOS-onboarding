@@ -1,0 +1,222 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.red-switch.ant-switch-checked {
+  background-color: red;
+}
+
+.red-switch.ant-switch-checked:hover {
+  background-color: #d00000 !important;
+}
+.business-settings {
+    direction: rtl;
+    padding: 16px;
+    background: $gray-light-active;
+
+    position: relative;
+    margin-top: 16px;
+
+
+
+
+    .setting-title {
+        font-size: 15px;
+        font-weight: 600;
+
+    }
+
+    .settings-card {
+
+        border-radius: 12px;
+        margin: 16px 0;
+
+        .ant-input {
+
+            padding: 12px 8px;
+        }
+    }
+
+    .section-title {
+        display: block;
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+
+    .invoice-radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+
+
+
+    .factor-wrapper {
+        direction: rtl;
+
+    }
+
+    .factor-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+
+        > .ant-row {
+            align-items: stretch;
+        }
+
+        .ant-col {
+            display: flex;
+        }
+
+    }
+
+    .factor-card {
+        display: flex;
+        height: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative;
+        width: 100%;
+
+        .ant-radio {
+            position: absolute;
+            top: 16px;
+            left: 16px; // 🔥 top-left corner
+            margin: 0;
+
+        }
+
+        .ant-radio+span {
+            display: flex;
+            height: 100%;
+            padding: 0;
+            width: 100%;
+        }
+
+        .card-content {
+            width: 100%;
+            min-height: 150px;
+            height: 100%;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 18px; // extra top padding for radio
+            display: flex;
+            align-items: flex-start;
+            background: #fff;
+            transition: all 0.2s ease;
+        }
+
+        /* Selected state */
+
+        .text-section {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 6px;
+            min-width: 0;
+        
+        }
+
+        .title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .description {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.7;
+            text-align: right;
+        }
+
+        .preview {
+            align-self: flex-start;
+            font-size: 13px;
+            font-weight: bold;
+            color: #ef4444;
+            cursor: pointer;
+            margin-top: auto;
+        }
+
+        .icon-section {
+            margin-left: 10px;
+        }
+
+    }
+
+}
+
+.settings-shell {
+    --settings-page-gutter: max(24px, calc((100% - 1160px) / 2));
+    display: block;
+    height: 100%;
+    min-height: 0;
+
+    > .ant-col {
+        height: 100%;
+    }
+
+    > .ant-col,
+    .page-container,
+    .sub-container,
+    .ant-form {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 0;
+        min-width: 0;
+    }
+
+    .page-container {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .business-settings {
+        flex-shrink: 0;
+    }
+
+    .settings-scroll-content {
+        flex: 1 1 0;
+        min-height: 0;
+        padding: 24px var(--settings-page-gutter);
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior-y: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sub-container {
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .submit-wrapper {
+        flex-shrink: 0;
+        text-align: left;
+        padding: 16px var(--settings-page-gutter) max(16px, calc(16px + env(safe-area-inset-bottom, 0px)));
+        border-top: 2px solid #f1f1f1;
+        background: #fff;
+        margin-top: 10px;
+    }
+
+    @media (max-width: 991px) {
+        --settings-page-gutter: 16px;
+
+        .settings-scroll-content {
+            padding-top: 16px;
+        }
+
+        .submit-wrapper .ant-btn {
+            width: 100%;
+        }
+    }
+}

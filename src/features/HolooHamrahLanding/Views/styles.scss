@@ -1,0 +1,152 @@
+.holoo-hamrah {
+  --hamrah-background: #fff;
+  --hamrah-text: #353535;
+  --hamrah-muted: #666;
+  --hamrah-card: #fff;
+  --hamrah-border: #e1e1e1;
+  --hamrah-package: #f5f5f5;
+  --hamrah-support: #202020;
+  background: var(--hamrah-background);
+  color: var(--hamrah-text);
+  font-family: "IRANYekanFN", sans-serif;
+  min-height: 100vh;
+
+  &--dark {
+    --hamrah-background: #000;
+    --hamrah-text: #eee;
+    --hamrah-muted: #b6b6b6;
+    --hamrah-card: #202020;
+    --hamrah-border: #666;
+    --hamrah-package: #202020;
+    --hamrah-support: #00182b;
+  }
+
+  h1, h2, h3, p { margin: 0; color: inherit; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+  button:focus-visible, a:focus-visible { outline: 3px solid #ff8181; outline-offset: 5px; }
+  h2 { font-size: 21px; font-weight: 700; line-height: 1.8; }
+  .hamrah-container { width: min(1200px, calc(100% - 48px)); margin-inline: auto; }
+  .hamrah-button { display: inline-flex; justify-content: center; align-items: center; padding: 10px 24px; border: 1px solid #f00; border-radius: 9px; background: #f00; color: #fff; font-size: 13px; font-weight: 500; line-height: 1.7; transition: filter .2s; }
+  .hamrah-button:hover { filter: brightness(.88); }
+  .hamrah-button:disabled { cursor: not-allowed; }
+  .hamrah-button--outline { background: transparent; border-color: #efdada; box-shadow: 0 0 7px #ffb5b54d; color: #f5dede; }
+  .hamrah-button--support { background: #f5f5f5; border-color: transparent; color: #f00; }
+  .hamrah-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 552px; border-radius: 0 0 20px 20px; color: #fff; background: linear-gradient(0deg, #000 0%, transparent 26%), repeating-linear-gradient(0deg, transparent 0 63px, #ffffff04 63px 64px), repeating-linear-gradient(90deg, transparent 0 63px, #ffffff04 63px 64px), radial-gradient(ellipse at 50% 20%, #102033, #070d13 75%); }
+  .hamrah-hero__orbit { position: absolute; z-index: -1; width: 112%; height: 290px; left: -6%; bottom: 60px; overflow: visible; pointer-events: none; }
+  .hamrah-hero__orbit-line { fill: none; stroke: #f00; stroke-width: 3px; vector-effect: non-scaling-stroke; filter: drop-shadow(0 3px 6px #ff000080); }
+  .hamrah-hero__spark { filter: drop-shadow(0 0 5px #ff6060) drop-shadow(0 0 12px #ff0000); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hamrah-hero__spark { display: none; }
+  }
+  .hamrah-header { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; height: 96px; }
+  .hamrah-navigation { display: flex; align-items: center; gap: 48px; font-size: 12px; }
+  .hamrah-brand { margin-inline-end: 48px; display: flex; flex-shrink: 0; }
+  .hamrah-brand img { object-fit: contain; }
+  .hamrah-header__actions { display: flex; align-items: center; gap: 24px; }
+  .hamrah-account { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; border: 1px solid #999; background: #202020; font-size: 20px; }
+  .hamrah-theme { display: flex; gap: 10px; padding: 4px; border: 1px solid #999; border-radius: 30px; background: #202020; }
+  .hamrah-theme button { display: grid; place-items: center; border: 0; border-radius: 50%; width: 34px; height: 34px; color: #aaa; background: transparent; font-size: 25px; }
+  .hamrah-theme button[aria-pressed="true"] { color: #f00; background: #fff; }
+  .hamrah-hero__inner { position: relative; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; min-height: 456px; }
+  .hamrah-hero__content { padding-top: 47px; }
+  .hamrah-eyebrow { color: #ff7777; font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+  .hamrah-hero h1 { font-size: 29px; font-weight: 700; line-height: 1.8; }
+  .hamrah-hero__description { color: #c8c8cc; font-size: 24px; line-height: 1.4; margin-top: 17px; } 
+  .hamrah-hero__actions { display: flex; gap: 12px; margin-top: 22px; }
+  .hamrah-hero__actions .hamrah-button { width: 210px; }
+  .hamrah-hero__phones { position: absolute; left: 20px; top: -46px; width: 460px; height: 500px; object-fit: contain; }
+  .hamrah-steps { padding-top: 22px; }
+  .hamrah-steps > h2 { text-align: center; margin-bottom: 16px; }
+  .hamrah-steps__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .hamrah-step { min-height: 170px; border: 1px solid var(--hamrah-border); background: var(--hamrah-card); border-radius: 8px; padding: 20px 16px 8px; }
+  .hamrah-step h3 { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 700;color: #333333; }
+  .hamrah-step h3 span { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 9px; color: #fff; background: #f00; font-size: 20px; }
+  .hamrah-step p { color: var(--hamrah-muted); font-size: 13px; line-height: 1.9; margin-top: 12px; }
+  .hamrah-step .hamrah-button { display: flex; box-sizing: border-box; width: 163px; min-height: 50px; margin-inline-start: auto; margin-top: 8px; font-size: 14px; }
+  .hamrah-download-note { font-size: 11px; color: var(--hamrah-muted); margin-top: 6px; }
+  .hamrah-package { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 42px; padding: 16px 40px; min-height: 182px; background: var(--hamrah-package); border: 1px solid #ffdada; border-radius: 8px; box-shadow: 0 8px 20px #00000006; }
+  .hamrah-package__content p { font-size: 15px; color: var(--hamrah-muted); margin-top: 14px; }
+  .hamrah-package ul { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 44px; padding: 0; margin: 20px 0 0; }
+  .hamrah-package li { display: flex; gap: 10px; font-size: 14px;align-items: flex-start; line-height: 1.5;}
+  .hamrah-package__price { background: var(--hamrah-background); box-sizing: border-box; border-radius: 10px; padding: 8px 13px 10px; display: flex; flex-direction: column; align-items: center; gap: 14px; width: 318px; max-width: 100%; flex-shrink: 0; text-align: center; }
+  .hamrah-package__price strong { font-size: 30px; font-weight: 700; line-height: 48px; color: #f00; }
+  .hamrah-package__price .hamrah-button { box-sizing: border-box; width: 100%; min-height: 49px; padding: 10px 12px; border-radius: 10px; font-size: 14px; line-height: 27px; }
+  .hamrah-package__price > span { font-size: 12px; line-height: 21px; color: var(--hamrah-muted); }
+  .hamrah-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding-top: 46px; padding-bottom: 24px; scroll-margin-top: 24px; }
+  .hamrah-feature { min-height: 104px; border-radius: 8px; display: flex; align-items: center; gap: 18px; padding: 24px 20px; color: #000; }
+  .hamrah-feature > .hamrah-feature__icon { font-size: 32px; flex-shrink: 0; }
+  .hamrah-feature h2 { font-size: 17px; }
+  .hamrah-feature--sales { background: #f4ffed; }
+  .hamrah-feature--balance { background: #eaf0ff; }
+  .hamrah-feature--checks { background: #ffebed; }
+  .hamrah-support { background: var(--hamrah-support); color: #fff; }
+  .hamrah-support__inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; min-height: 132px; padding-block: 28px; }
+  .hamrah-support p { font-size: 14px; margin-top: 6px; line-height: 1.8; }
+  .hamrah-support__actions { display: flex; gap: 16px; }
+  .hamrah-support__actions .hamrah-button { min-width: 196px; }
+  .hamrah-footer { min-height: 80px; display: flex; align-items: center;justify-content: space-between; }
+  .hamrah-footer .hamrah-account { color: #fff; }
+  &--dark .hamrah-steps > h2, &--dark .hamrah-step h3 { color: #fff; }
+  &--dark .hamrah-package { border-color: #750000; }
+  &--dark .hamrah-package__price strong { color: #ffaaaa; }
+  &--dark .hamrah-feature { color: #fff; }
+  &--dark .hamrah-feature--sales { background: #002300; }
+  &--dark .hamrah-feature--balance { background: #001d38; }
+  &--dark .hamrah-feature--checks { background: #380000; }
+  &--dark .hamrah-button--support { background: #000d17; color: #ffcccc; }
+
+  @media (max-width: 1100px) {
+    .hamrah-hero__phones { width: 40%; left: 0; }
+    .hamrah-hero__inner { grid-template-columns: 1.35fr 1fr; gap: 24px; }
+    .hamrah-hero h1 { font-size: 25px; }
+    .hamrah-hero__description { font-size: 20px; }
+    .hamrah-package ul { gap: 20px; }
+    .hamrah-support__actions .hamrah-button { min-width: 150px; }
+    .hamrah-navigation { gap: 28px; }
+    .hamrah-brand { margin-inline-end: 16px; }
+  }
+
+  @media (max-width: 767px) {
+    h2 { font-size: 17px; }
+    .hamrah-button { font-size: 12px; }
+    .hamrah-navigation { font-size: 11px; }
+    .hamrah-step h3 { font-size: 13px; }
+    .hamrah-step p { font-size: 12px; }
+    .hamrah-package__content p { font-size: 13px; line-height: 1.9; }
+    .hamrah-package li { font-size: 12px; }
+    .hamrah-feature h2 { font-size: 15px; }
+    .hamrah-support p { font-size: 12px; }
+    .hamrah-container { width: calc(100% - 32px); }
+    .hamrah-header { height: auto; min-height: 120px; align-items: flex-start; padding-top: 16px; }
+    .hamrah-header .hamrah-navigation { flex-wrap: wrap; gap: 18px; padding-bottom: 16px; }
+    .hamrah-header .hamrah-brand { width: 100%; margin: 0; }
+    .hamrah-header__actions { position: absolute; left: 0; top: 16px; gap: 12px; }
+    .hamrah-account { width: 42px; height: 42px; }
+    .hamrah-hero__inner { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .hamrah-hero__content { padding-top: 16px; text-align: center; }
+    .hamrah-eyebrow { font-size: 12px; margin-bottom: 12px; }
+    .hamrah-hero h1 { font-size: clamp(18px, 4.5vw, 24px); }
+    .hamrah-hero__description { font-size: 14px; line-height: 1.9; }
+    .hamrah-hero__actions { justify-content: center; }
+    .hamrah-hero__actions .hamrah-button { width: auto; flex: 1; padding-inline: 14px; }
+    .hamrah-hero__phones { position: relative; top: auto; left: auto; width: min(100%, 360px); height: auto; }
+    .hamrah-hero__orbit { bottom: 55px; }
+    .hamrah-steps { padding-top: 24px; }
+    .hamrah-steps > h2 { font-size: 16px; }
+    .hamrah-steps__grid, .hamrah-features { grid-template-columns: 1fr; gap: 16px; }
+    .hamrah-step { min-height: 145px; padding-bottom: 16px; }
+    .hamrah-package { flex-direction: column; padding: 24px 20px; margin-top: 28px; gap: 24px; }
+    .hamrah-package__content { width: 100%; }
+    .hamrah-package ul { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .hamrah-package__price { width: 318px; }
+    .hamrah-features { padding-top: 28px; }
+    .hamrah-feature { min-height: 88px; }
+    .hamrah-support__inner { flex-direction: column; align-items: stretch; gap: 20px; }
+    .hamrah-support__actions { gap: 12px; }
+    .hamrah-support__actions .hamrah-button { min-width: 0; flex: 1; padding-inline: 10px; }
+    .hamrah-footer .hamrah-navigation { width: 100%; gap: 20px; justify-content: right; font-size: 12px; }
+    .hamrah-footer .hamrah-brand { margin: 0; }
+  }
+}

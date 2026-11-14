@@ -1,0 +1,220 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.payment-error {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding: 28px 24px 16px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  box-sizing: border-box;
+  direction: rtl;
+  color: #262626;
+  font-family: inherit;
+
+  &__header {
+    flex-shrink: 0;
+    margin-bottom: 30px;
+    text-align: center;
+
+    h2 {
+      margin: 12px 0 2px;
+      color: #d90000;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    p {
+      max-width: 520px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  &__error-icon {
+    color: #e95659;
+    font-size: 38px;
+  }
+
+  &__details {
+    display: grid;
+    flex-shrink: 0;
+    gap: 16px;
+  }
+
+  &__card {
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f7f7f7;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 40px;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    gap: 16px;
+    font-size: 14px;
+    line-height: 1.8;
+
+    > span {
+      flex-shrink: 0;
+    }
+
+    > strong {
+      min-width: 0;
+      font-weight: 400;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+
+    &--phone {
+      border-bottom: 2px solid #fff;
+    }
+  }
+
+  &__purchase {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  &__package {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    gap: 10px;
+
+    > .anticon {
+      flex-shrink: 0;
+      color: #ff0000;
+      font-size: 26px;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    strong {
+      font-weight: 400;
+      overflow-wrap: anywhere;
+    }
+
+    span:not(.anticon) {
+      color: #555;
+    }
+  }
+  &__loading {
+    display: grid;
+    min-height: 280px;
+    place-items: center;
+  }
+    &__package-icon {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 auto;
+    object-fit: contain;
+  }
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 0;
+
+    strong {
+      color: #555;
+      font-weight: 400;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  &__customer {
+    padding: 2px 0;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 32px;
+
+    .ant-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      height: auto;
+      padding: 9px 16px;
+      border-radius: 9px;
+      box-shadow: none;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      white-space: normal;
+    }
+
+    .payment-error__action.buttons-styles {
+      border: 1px solid #0077ed;
+      background: #0077ed;
+      color: #fff;
+
+      &:hover,
+      &:focus-visible {
+        border-color: #005bb5 !important;
+        background: #005bb5 !important;
+        color: #fff !important;
+      }
+    }
+
+    .payment-error__close.buttons-styles {
+      border: 1px solid $red-main;
+      background: $red-main;
+      color: #fff;
+
+      &:hover,
+      &:focus-visible {
+        border-color: $red-main !important;
+        background: #fff !important;
+        color: $red-main !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .payment-error {
+    padding-right: 16px;
+    padding-left: 16px;
+
+    &__header {
+      h2 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+
+.payment-error__package-service-badge { display: inline-block; margin-inline-start: 8px; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; line-height: 1.6; }
+.payment-error__package-service-badge--send-invoice { background: #e6f4ff; color: #1677ff; }
+.payment-error__package-service-badge--bi { background: #f3e8ff; color: #722ed1; }

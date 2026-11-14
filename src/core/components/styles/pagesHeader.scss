@@ -1,0 +1,61 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.header-content {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    row-gap: 8px;
+
+}
+
+.header-text {
+    font-size: 16px;
+    color: $gray-text;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.header-actions {
+    justify-content: flex-end;
+}
+
+@media (max-width:768px) {
+    .header-text {
+        font-size: $text-md;
+
+    }
+}
+
+.header-title-wrapper {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+
+    > img {
+        flex: 0 0 auto;
+    }
+
+    .page-title {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .header-actions {
+        justify-content: flex-start;
+
+        .ant-btn {
+            max-width: 100%;
+            white-space: normal;
+        }
+    }
+}

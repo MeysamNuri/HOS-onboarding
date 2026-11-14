@@ -1,0 +1,40 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+  
+    &__item {
+
+
+        box-shadow: none;
+
+        .ant-card-body {
+            padding:0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        direction: rtl;
+
+        padding: 16px;
+        background: $bg-gray;
+    }
+
+    &__label {
+        font-size: $text-md;
+        color: #666;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    &__value {
+        font-size: $text-md;
+        color: #222;
+        font-weight: 600;
+        direction: ltr;
+    }
+}

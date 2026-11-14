@@ -1,0 +1,151 @@
+.banner-carousel {
+  position: relative;
+  width: 100%;
+
+  &__viewport {
+    width: 100%;
+  }
+
+  &__pagination {
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+    left: 50%;
+    display: flex;
+    gap: 8px;
+    direction: ltr;
+    transform: translateX(-50%);
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: #ff1629;
+    cursor: pointer;
+    opacity: 0.45;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &--active {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+  }
+}
+
+.banner-slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+
+  &__picture,
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 24px;
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #fff;
+    text-align: right;
+  }
+
+  &__title {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    font-family: "IRANYekanFN", Tahoma, sans-serif !important;
+    font-size: clamp(14px, 1.45vw, 16px);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__description {
+    width: 100%;
+    margin-top: 4px;
+    color: #fff;
+    font-size: clamp(12px, 1.2vw, 15px);
+    line-height: 1.8;
+  }
+
+  &__description--mobile {
+    display: none;
+  }
+
+  &__button {
+    min-height: 27px;
+    margin-top: 6px;
+    padding: 4px 12px;
+    border: 0;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 8px;
+    color: #1f1f1f;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
+
+    .anticon {
+      font-size: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-slide {
+    &__content {
+      top: 14px;
+      right: 12px;
+      width: 40%;
+      height: auto;
+      justify-content: flex-start;
+    }
+
+    &__title {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    &__description {
+      margin-top: 5px;
+      font-size: 9px;
+      line-height: 1.8;
+    }
+
+    &__description--desktop {
+      display: none;
+    }
+
+    &__description--mobile {
+      display: block;
+    }
+
+    &__button {
+      min-width: 90px;
+      min-height: 23px;
+      margin-top: 6px;
+      padding: 3px 8px;
+      gap: 6px;
+      font-size: 9px;
+
+      .anticon {
+        font-size: 8px;
+      }
+    }
+  }
+}

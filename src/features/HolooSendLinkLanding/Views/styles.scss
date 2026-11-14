@@ -1,0 +1,97 @@
+.holoo-landing-page {
+  --landing-content-width: min(calc(100% - 64px), 1200px);
+
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: #fff;
+  color: #202020;
+  direction: rtl;
+  font-family: "IRANYekanFN", Tahoma, sans-serif;
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+}
+
+.landing-proposal-banners {
+  display: grid;
+  width: var(--landing-content-width);
+  margin: 0px auto 54px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+
+
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 135px;
+    object-fit: fill;
+    border-radius: 11px;
+  }
+
+  &__link--channel {
+    position: relative;
+    overflow: hidden;
+    height: 135px;
+    border-radius: 11px;
+
+    .landing-proposal-banners__image {
+      position: absolute;
+      top: calc(-11 / 210 * 100%);
+      left: calc(-11 / 656 * 100%);
+      width: calc(678 / 656 * 100%);
+      max-width: none;
+      height: calc(232 / 210 * 100%);
+      border-radius: 0;
+    }
+  }
+
+  &__link--campaign {
+    display: grid;
+    align-items: center;
+
+
+  }
+}
+
+@media (max-width: 1050px) {
+  .holoo-landing-page {
+    --landing-content-width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 860px) {
+  .holoo-landing-page {
+    --landing-content-width: 100%;
+    width: 100%;
+    max-width: 100vw;
+    background: #fff;
+
+    >* {
+      max-width: 100vw;
+    }
+  }
+
+  .landing-proposal-banners {
+    width: auto;
+    margin: 24px 14px 18px;
+    grid-template-columns: 1fr;
+
+    &__image {
+
+      height: 105px !important;
+
+    }
+   .landing-proposal-banners__image {
+
+      top: 20px;
+
+    }
+  }
+
+}

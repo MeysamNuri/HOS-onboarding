@@ -1,0 +1,160 @@
+/* ===============================
+   Variables
+================================ */
+$gray-dark: #333333;
+$black-dark: #1E1E1E;
+$black-light: #626262;
+$gray-medium: #EAEAEA;
+$gray-text: #7c7c7c;
+$gray-light: #f8f8f8;
+$gray-light2: #E5E5E5;
+$gray-light3: #F7F7F7A3;
+$gray-light4: #D5D5D5;
+$gray-badge-second: #BEBEBE;
+$sub-text: #7A7A7A;
+$blue-badge: #00A9CD;
+$blue-badge-light: #B8DCFF;
+$blue-light: #B5EBFF;
+$gray-light-active: #F5F5F5B8;
+$gray-light-disable: #F5F5F566;
+$gray-badge: #E0E0E0;
+$gray-badge2: #f2f2f2;
+$input-gray: #FDFDFD;
+$border-light: #e5e7eb;
+$red-main: #ff0000;
+$red-text: #E42628;
+$green-text: #008A21;
+$green-success: #C9FFBE;
+$green-light: #D9FFE2;
+$yellow-light: #FFE190;
+$purple-main: #7E57C2;
+$purple-light: #E3C6FF;
+$info-light: #D5E3FF;
+$pink-light: #FFE4E0;
+$main-gray:#f5f5f5;
+$pink-main:#fff0f0;
+$pink-badge:#FFE0E0;
+$pink-light:#FFF5F5;
+$pink-error:#FFB4A9;
+$default-button-hover:#550000;
+$red-sub-text:#AA0000;
+$active-button:#390000;
+$bg-gray:#F7F7F7;
+$text-dark: #1f1f1f;
+$text-muted: #595959;
+$text-gray: #666;
+$border-light: 1px solid #eee;
+$color-white: #fff;
+$color-bg: #f5f5f5;
+$icon-color:#444;
+$color-text-primary: #333;
+$color-text-secondary: #555;
+$color-text-muted: #666;
+$color-text-light: #888;
+
+
+
+//sizes
+$heading-lg: 2.5rem;
+$heading-xl: 3rem;
+$heading-sm: 1.5rem;
+$mobile-heading: 1.2rem;
+$text-lg: 19px;
+$text-sm: 16px;
+$text-xs: 12px;
+$text-md: 14px;
+$radius-md: 12px;
+$radius-sm: 8px;
+$radius-xs: 4px;
+$shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.04);
+$shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+
+
+
+
+$shadow-card:
+  0 4px 12px rgba(0, 0, 0, 0.08),
+  0 1px 3px rgba(0, 0, 0, 0.05);
+
+$transition-default:
+  color 0.2s ease,
+  background-color 0.2s ease,
+  transform 0.2s ease;
+
+// ===============================
+// Mixins
+// ===============================
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ===============================
+// Placeholders
+// ===============================
+
+%active-card {
+  background: $color-white;
+  box-shadow: $shadow-card;
+}
+
+%clickable {
+  cursor: pointer;
+  transition: $transition-default;
+}
+/* ===============================
+   Mixins
+================================ */
+@mixin section-padding {
+  padding: 30px 16px;
+}
+
+@mixin section-title {
+
+  color: $gray-dark;
+  font-weight: bolder;
+  margin-bottom: 30px;
+  text-align: center
+}
+
+
+%card-base {
+  background-color: #fff;
+  border-radius: $radius-md;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+%card-hover {
+  &:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  }
+}
+
+%icon-base {
+  font-size: $text-lg;
+  color: $red-main;
+  margin: 0 12px 12px 0;
+}
+
+%title-base {
+  font-size: $text-lg;
+  font-weight: 600;
+  color: $text-dark;
+  margin-bottom: 8px;
+}
+
+%description-base {
+  font-size: $text-sm;
+  line-height: 1.8;
+  color: $text-muted;
+}

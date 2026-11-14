@@ -1,0 +1,124 @@
+// SuggestedPackageForm.scss
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.suggested-package {
+    direction: rtl;
+    background: linear-gradient(140deg, #FFF5F5 40%, #ffffff 95%, #ffffff 100%);
+    border-radius: $radius-sm;
+    padding: 26px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+    margin: 24px 0px;
+
+    &__header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+    &__icon {
+        font-size: 28px;
+        color: #ff1d1d;
+    }
+
+    &__title {
+        margin: 0 !important;
+        font-size: $text-sm !important;
+        font-weight: 700 !important;
+        color: #1f1f1f;
+    }
+
+    &__subtitle {
+        display: block;
+        text-align: right;
+        color: #8c8c8c;
+        font-size: 15px;
+        margin: 18px 0 28px;
+    }
+
+    &__submit {
+        width: 150px;
+        height: 52px;
+        margin-top: 8px;
+        background: #ff1717;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 700;
+
+        &:hover {
+            background: #ff3434 !important;
+        }
+    }
+
+    .ant-form-item {
+        margin-bottom: 16px;
+    }
+
+    .ant-input,
+    .ant-input-number,
+    .ant-select-selector,
+    .ant-input-affix-wrapper {
+        height: 54px !important;
+        border-radius: 10px !important;
+        border: 1px solid #e2e2e2 !important;
+        font-size: 15px;
+        box-shadow: none !important;
+    }
+
+    .ant-input-number-input {
+        height: 52px !important;
+    }
+
+    .ant-input::placeholder,
+    .ant-input-number-input::placeholder {
+        color: #a7a7a7;
+    }
+
+    .ant-select-selection-placeholder {
+        color: #a7a7a7;
+    }
+
+    .ant-input-number-handler-wrap {
+        border-inline-start: none;
+    }
+
+    .ant-input-number-handler-up,
+    .ant-input-number-handler-down {
+        color: #ff1717;
+    }
+
+    .ant-input-number-handler-up:hover,
+    .ant-input-number-handler-down:hover {
+        color: #ff1717;
+    }
+
+    textarea.ant-input {
+        min-height: 128px !important;
+        padding: 18px;
+        resize: none;
+        border-radius: 10px !important;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .suggested-package {
+        padding: 16px;
+        margin: 0 !important;
+
+        &__title {
+            font-size: 22px !important;
+        }
+
+        &__submit {
+            width: 100%;
+        }
+
+        textarea.ant-input {
+            min-height: 140px !important;
+        }
+    }
+}

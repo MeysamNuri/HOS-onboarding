@@ -1,0 +1,276 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.sent-link-container {
+    width: 100%;
+    padding: 16px;
+    direction: rtl;
+
+}
+
+
+
+
+/* =========================
+   Link info
+========================= */
+
+.link-info {
+    height: 50px;
+
+    margin-bottom: 16px;
+    padding: 0 16px;
+
+    border-radius: 12px;
+
+    background: #fff0f0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #383838;
+
+    font-size: $text-md;
+}
+
+.link-title {
+    font-weight: 500;
+}
+
+.phone-number {
+    direction: ltr;
+
+    color: #343434;
+
+    font-size: $text-md;
+}
+
+/* =========================
+   Table
+========================= */
+
+
+
+.sent-table {
+    direction: rtl;
+
+    .ant-table {
+        background: transparent;
+    }
+
+    .ant-table-container {
+        overflow: hidden;
+
+        border-radius: 8px;
+    }
+
+    /* Header */
+
+    .ant-table-thead>tr>th {
+        height: 43px;
+
+        padding: 0 7px;
+
+        background: #E5E5E5 !important;
+
+        border-color: #d1d1d1 !important;
+
+        color: #3e3e3e;
+
+        font-size: $text-md;
+        font-weight: 500;
+
+        text-align: center;
+        white-space: nowrap;
+
+        &::before {
+            display: none !important;
+        }
+    }
+
+    /* Body */
+
+    .ant-table-tbody>tr>td {
+        height: 43px;
+
+        padding: 0 6px;
+
+        background: #fff;
+
+        border-color: #eeeeee !important;
+
+        color: #3d3d3d;
+
+        // font-size: 10px;
+
+        text-align: center;
+    }
+
+    .ant-table-tbody>tr:hover>td {
+        background: #fff !important;
+    }
+}
+
+/* =========================
+   Channel
+========================= */
+
+.channel-cell {
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    white-space: nowrap;
+}
+
+.channel-icon {
+    width: 19px;
+    height: 19px;
+
+    flex-shrink: 0;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+.sms-icon {
+    color: #ff0000;
+
+    svg {
+        font-size: 16px;
+    }
+}
+
+.bale-icon {
+    color: #54c8b4;
+
+    svg {
+        font-size: 20px;
+    }
+}
+
+.whatsapp-icon {
+    color: #27c957;
+
+    svg {
+        font-size: 16px;
+    }
+}
+
+/* =========================
+   Date
+========================= */
+
+.date-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    direction: rtl;
+
+    white-space: nowrap;
+}
+
+/* =========================
+   Status
+========================= */
+
+.status-tag {
+    min-width: 72px;
+    height: 22px;
+
+    margin: 0;
+    padding: 0 7px;
+
+    border: 0;
+    border-radius: 7px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.status-success {
+    background: #b9f6a9 !important;
+
+    color: #155b0d !important;
+}
+
+.status-error {
+    background: #ffb5b5 !important;
+
+    color: #6e1717 !important;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.modal-footer {
+    height: 54px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    padding: 0px;
+}
+
+.cancel-button {
+    padding: 0;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+
+    color: #ff0000;
+
+    font-family: inherit;
+    font-size: $text-md;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    &:hover {
+        color: #d90000;
+    }
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 480px) {
+    .sent-link-modal {
+        width: calc(100vw - 10px) !important;
+        max-width: calc(100vw - 10px);
+    }
+
+    .sent-table {
+
+        .ant-table-thead>tr>th,
+        .ant-table-tbody>tr>td {
+            padding: 0 4px;
+        }
+    }
+
+    .channel-cell {
+        gap: 4px;
+    }
+
+    .date-cell {
+        gap: 4px;
+    }
+}

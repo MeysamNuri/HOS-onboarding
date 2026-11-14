@@ -1,0 +1,96 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.order-modal {
+  padding: 0 16px;
+  max-height: 600px;
+
+  .modal-title {
+
+    text-align: center;
+   margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  .modal-subtitle {
+   
+    display: block;
+    text-align: right;
+    margin-bottom: 8px;
+  }
+
+  .ant-form-item-label>label {
+    font-weight: 500;
+  }
+
+  .ant-input {
+    border-radius: 10px;
+  }
+
+
+  .show-mobile-Box {
+    background-color: $pink-main;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .default-phoneNumber {
+    color: $red-main;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .insert-serial {
+    border-color: $red-main;
+    padding: 12px 5px;
+    margin-bottom: 8px;
+
+
+  }
+
+  .serials-list {
+    margin-bottom: 40px;
+    text-align: center;
+    border-top: 1px solid $gray-badge;
+    padding: 16px 0;
+
+  }
+}
+
+.button-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  margin-left: 30px;
+
+  .ant-btn {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-modal {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .button-container {
+    right: 16px;
+    left: 16px;
+    bottom: 24px;
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    width: auto;
+    margin: 0;
+    padding: 8px 0;
+    background: #fff;
+    z-index: 1;
+
+    .ant-btn {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.store-info-container {
+
+
+  padding: 16px;
+  direction: rtl;
+
+  .form-title {
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 16px;
+    margin-top: 16px;
+
+  }
+}
+
+
+.info-section {
+  margin-bottom: 16px;
+  text-align: right;
+
+  .section-title {
+    display: block;
+    color: #ff4d4f; 
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+
+  .section-description {
+    display: block;
+    font-size: 13px;
+    color: #8c8c8c; // gray helper text
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .store-info-container {
+    .close-btn {
+      display: none;
+    }
+  }
+
+}

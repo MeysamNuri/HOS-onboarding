@@ -1,0 +1,155 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+
+.features-title {
+  text-align: center;
+  margin: 24px 0;
+
+
+}
+
+.features-card {
+  border: 2px dashed #cfd8dc;
+  border-radius: 12px;
+  padding: 16px;
+  direction: rtl;
+  background: #fafafa;
+  max-width: 1550px;
+  margin: auto;
+
+  .feature-row {
+    padding: 14px 8px;
+
+  }
+
+  .check-col {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .check-icon {
+    width: 24px;
+    height: 24px;
+    background: #f6ffed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #52c41a;
+    font-size: 14px;
+  }
+
+  .text-col {
+    font-size: 14px;
+    color: #333;
+    padding: 0 8px;
+    text-align: right;
+  }
+
+  .action-col {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .action-icon {
+    width: 36px;
+    height: 36px;
+    background: #fff1f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff4d4f;
+    font-size: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+}
+
+
+.invoice-features {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  direction: rtl;
+
+  &__card {
+    background: #f7f7f7;
+    border-radius: 12px;
+    padding: 20px 12px;
+    min-height: 105px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    transition: all 0.25s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__icon {
+    font-size: 22px;
+    color: #ed1c24;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 4px;
+  }
+
+  &__description {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 1200px) {
+  .invoice-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .invoice-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .invoice-features {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 991px) {
+  .features-container {
+    margin: 0px;
+  }
+
+  .features-card {
+  
+    padding: 0 !important;
+
+    .check-icon {
+      display: none;
+    }
+
+  }
+
+  .features-title {
+    .ant-typography {
+      font-size: $mobile-heading !important;
+
+    }
+  }
+}

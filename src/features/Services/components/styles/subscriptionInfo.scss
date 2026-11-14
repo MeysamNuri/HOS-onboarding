@@ -1,0 +1,52 @@
+.subscription-info {
+  padding: 16px;
+
+
+  &__handle {
+    display: none;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: right;
+    padding-top: 10px;
+  }
+
+  &__desc {
+    font-size: 14px;
+    color: #8c8c8c;
+    line-height: 1.7;
+    margin-bottom: 8px;
+     text-align: right;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin: 8px 0;
+
+    .danger {
+      color: #ff4d4f;
+      font-weight: 500;
+    }
+  }
+
+  &__note {
+    font-size: 14px;
+    color: #8c8c8c;
+    line-height: 1.7;
+    margin: 12px 0 20px;
+     text-align: right;
+  }
+
+  &__btn {
+    font-size: 14px;
+    height: 44px;
+    border-radius: 8px;
+  }
+}
+

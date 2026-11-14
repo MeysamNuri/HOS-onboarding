@@ -1,0 +1,329 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.packages-page {
+  width: 100%;
+  direction: rtl;
+
+  .package-card {
+    margin-bottom: 18px;
+    overflow: hidden;
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .ant-card-body {
+      padding: 0;
+    }
+  }
+
+  .card-header {
+    display: flex;
+    height: 64px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    background: #dedede;
+
+    .header-icon {
+      display: flex;
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      margin-left: 12px;
+
+      img {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    .header-right {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .title {
+        overflow: hidden;
+        max-width: 100%;
+        color: #1f1f1f;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.5;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .days {
+        margin-top: 2px;
+        color: #64718b;
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .card-body {
+    display: flex;
+    min-height: 127px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 28px;
+  }
+
+  .card-main-content {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-section {
+    width: 100%;
+  }
+
+  .info-grid {
+    display: flex;
+    justify-content: flex-start;
+    gap: 64px;
+  }
+
+  .info-item {
+    display: flex;
+    min-width: 90px;
+    flex-direction: column;
+    gap: 16px;
+
+    .label {
+      color: #666;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .value {
+      color: #202020;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .value-unit {
+      margin-right: 7px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+
+  .reserve-package-button {
+    display: flex;
+    width: 129px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    border-color: #d4d4d4 !important;
+    border-radius: 9px;
+    background: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+    color: $red-main !important;
+    font-size: $text-md;
+    font-weight: 600;
+
+    &:hover {
+      border-color: $red-main !important;
+      background: #eeeeee !important;
+    }
+  }
+
+  .progress-wrapper {
+    display: flex;
+    width: 112px;
+    flex: 0 0 112px;
+    align-items: center;
+    justify-content: center;
+
+    .ant-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ant-progress-text {
+      inset-inline-start: 50%;
+      transform: translateX(-50%);
+    }
+
+    .circle-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .days-number {
+        padding-bottom: 7px;
+        border-bottom: 1px solid #efefef;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+
+      .days-text {
+        margin-top: 8px;
+        color: #7d7d7d;
+        font-size: 9px;
+      }
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    min-height: 38px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 6px 20px;
+    border-top: 1px solid #ededed;
+    background: #fff;
+    color: #6b6b6b;
+    font-size: 12px;
+  }
+
+  .ant-progress-circle-path {
+    stroke-linecap: round;
+  }
+}
+
+@media (max-width: 768px) {
+  .packages-page {
+    .package-card {
+      margin-bottom: 12px;
+      border-radius: 8px;
+      box-shadow: none;
+    }
+
+    .card-header {
+      height: 48px;
+      padding: 0 12px;
+
+      .header-icon {
+        width: 22px;
+        height: 22px;
+        margin-left: 8px;
+
+        img {
+          width: 21px;
+          height: 21px;
+        }
+      }
+
+      .header-right {
+        .title {
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        .days {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .card-body {
+      min-height: 108px;
+      gap: 8px;
+      padding: 9px 10px 8px;
+    }
+
+    .card-main-content {
+      align-items: stretch;
+    }
+
+    .info-grid {
+      gap: clamp(12px, 5vw, 32px);
+    }
+
+    .info-item {
+      min-width: 0;
+      gap: 8px;
+
+      .label {
+        font-size:12px;
+      }
+
+      .value {
+        font-size: 12px;
+      }
+
+      .value-unit {
+        margin-right: 3px;
+        font-size: 8px;
+      }
+    }
+
+    .reserve-package-button {
+      align-self: flex-start;
+      min-width: 106px;
+      height: 34px;
+      gap: 7px;
+      padding: 3px 10px;
+      border-radius: 7px;
+      font-size: 12px;
+
+      .anticon {
+        font-size: 12px;
+      }
+    }
+
+    .progress-wrapper {
+      width: 76px;
+      flex-basis: 76px;
+
+      .ant-progress {
+        transform: scale(0.78);
+      }
+
+      .circle-content {
+        .days-number {
+          padding-bottom: 5px;
+          font-size: 12px;
+        }
+
+        .days-text {
+          margin-top: 6px;
+          font-size: 10px;
+        }
+      }
+    }
+
+    .card-footer {
+      min-height: 24px;
+      gap: 7px;
+      padding: 4px 10px;
+      font-size: 12px;
+      flex-wrap: wrap;
+      white-space: normal;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .packages-page {
+    .card-body {
+      gap: 4px;
+      padding-inline: 8px;
+    }
+
+    .info-grid {
+      gap: 10px;
+    }
+
+    .progress-wrapper {
+      width: 68px;
+      flex-basis: 68px;
+    }
+  }
+}

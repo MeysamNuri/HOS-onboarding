@@ -1,0 +1,685 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.send-invoice-guide-shell {
+  display: block;
+  height: 100%;
+  min-height: 0;
+  background: #fff;
+
+  > .ant-col {
+    display: flex;
+    height: 100%;
+    min-height: 0;
+  }
+}
+
+.page-container.send-invoice-guide-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.send-invoice-guide-page {
+  --guide-page-gutter: max(24px, calc((100% - 1160px) / 2));
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+
+  &__content {
+    flex: 1 1 0;
+    min-height: 0;
+    padding: 28px var(--guide-page-gutter) 24px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-bottom: 24px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+
+    h1 {
+      margin: 6px 0 14px;
+      color: $black-dark;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    p {
+      color: $gray-text;
+      font-size: $text-sm;
+      line-height: 1.9;
+    }
+  }
+
+  &__back {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__settings-button {
+    min-width: 189px;
+    height: 44px;
+    margin-top: 2px;
+    border-color: $red-main !important;
+    border-radius: 10px;
+    color: $red-main !important;
+    font-size: $text-md;
+    font-weight: 600;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 44px 22px 0;
+  }
+
+  &__mobile-context {
+    display: none;
+  }
+
+  &__share {
+    flex-shrink: 0;
+    padding: 16px var(--guide-page-gutter) calc(16px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid #f1f1f1;
+    background: #fff;
+    text-align: left;
+    margin-top: 10px;
+
+    .ant-btn {
+      min-width: 246px;
+      height: 44px;
+      border-radius: 10px;
+      font-size: $text-sm;
+    }
+  }
+
+}
+
+.guide-tab {
+  height: 32px;
+  padding: 6px 14px;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  background: #fff;
+  color: $black-dark;
+  font-size: $text-md;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: $red-main;
+    color: $red-main;
+  }
+
+  &--active {
+    border-color: #f4caca;
+    background: #fff0f0;
+  }
+
+  &__mobile-label {
+    display: none;
+  }
+}
+
+.guide-download-card {
+  display: flex; 
+  align-items: center;
+  gap: 28px;
+  min-height: 194px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: $gray-light2;
+  box-shadow: 0 4px 18px rgba(28, 32, 41, 0.1);
+  margin-bottom: 24px;
+
+  &__cover {
+    position: relative;
+    display: flex;
+    flex: 0 0 106px;
+    align-self: stretch;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 158px;
+    padding: 12px 8px 10px;
+    overflow: hidden;
+    border: 1px solid #d7d7d7;
+    border-radius: 5px;
+    background: linear-gradient(160deg, #fff 48%, #ffe8e8 48%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.24);
+
+    &::before,
+    &::after {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(238, 81, 87, 0.32);
+      content: '';
+    }
+
+    &::before {
+      right: -22px;
+      bottom: -18px;
+      width: 76px;
+      height: 76px;
+    }
+
+    &::after {
+      right: 28px;
+      bottom: -20px;
+      width: 54px;
+      height: 54px;
+    }
+
+    > img {
+      width: 48px;
+      height: auto;
+      margin-bottom: 18px;
+    }
+
+    > span:not(.guide-download-card__cover-badge) {
+      position: relative;
+      z-index: 1;
+      color: #303030;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.65;
+      text-align: center;
+    }
+  }
+
+  &__cover-badge {
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    z-index: 2;
+    display: grid;
+    width: 25px;
+    height: 29px;
+    place-items: center;
+    border-radius: 2px;
+    background: #e51f27;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 700;
+  }
+
+  &__content {
+    flex: 1;
+
+    h2 {
+      margin: 0 0 8px;
+      color: $black-dark;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    p {
+      color: $gray-text;
+      font-size: $text-md;
+      line-height: 1.8;
+    }
+  }
+
+  &__button {
+    width: 224px;
+    height: 44px;
+    margin-top: 14px;
+    border: 0 !important;
+    border-radius: 10px;
+    background: $red-main !important;
+    color: #fff !important;
+    font-size: $text-sm;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      background: $default-button-hover !important;
+    }
+  }
+}
+
+.aparat-video {
+  width: 100%;
+  margin-top: 18px;
+  padding: 24px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #ededed;
+  box-shadow: 0 3px 16px rgba(28, 32, 41, 0.12);
+
+  .h_iframe-aparat_embed_frame {
+    position: relative;
+  }
+
+  .ratio {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-top: 57%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  &:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    aspect-ratio: auto;
+    background: #000;
+    padding: 0;
+
+    .h_iframe-aparat_embed_frame {
+      height: 100%;
+    }
+
+    .ratio {
+      display: none;
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+}
+
+.guide-proposal-banners {
+  display: grid;
+  width: 100%;
+  margin-top: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+
+  &__link {
+    display: block;
+    aspect-ratio: 679 / 233;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 11px;
+  }
+
+  &__link--campaign {
+    display: grid;
+    align-items: center;
+
+    .guide-proposal-banners__image {
+      height: 92%;
+    }
+  }
+}
+
+.sendInvoice-guide {
+  &__update-card {
+    margin-top: 18px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: #fff0f0;
+    box-shadow: 0 3px 14px rgba(28, 32, 41, 0.08);
+
+    .ant-typography {
+      color: $gray-text;
+      line-height: 1.9;
+    }
+  }
+
+  &__update-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .ant-typography {
+      margin: 0;
+      color: $black-dark;
+      font-size: $text-sm;
+    }
+
+   
+  }
+
+
+
+  &__version {
+    margin-top: 7px !important;
+    color: $black-light !important;
+    font-weight: 700;
+  }
+
+  &__install-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    height: 42px;
+    margin-top: 10px;
+    margin-right: auto;
+    border-color: $red-main !important;
+    border-radius: 8px;
+    background: transparent;
+    color: $red-main !important;
+
+    &:hover {
+      border-color: $default-button-hover !important;
+      color: $default-button-hover !important;
+    }
+  }
+}
+
+.senLink-guide-buttons {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .guide-proposal-banners {
+    grid-template-columns: 1fr;
+  }
+
+  .send-invoice-guide-page {
+    --guide-page-gutter: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &__content {
+      padding-top: 8px;
+    }
+
+    &__header {
+      display: block;
+    }
+
+    &__heading {
+      align-items: center;
+      gap: 2px;
+
+      h1 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+    &__back {
+      width: 36px;
+      height: 36px;
+
+      img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    &__settings-button {
+      display: none;
+    }
+
+    &__tabs {
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin: 12px 0 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 0 8px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__mobile-context {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+
+      strong {
+        overflow: hidden;
+        color: $black-dark;
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      button {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 5px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: $red-main;
+        font-size: 12px;
+        cursor: pointer;
+
+        .anticon {
+          font-size: 10px;
+        }
+      }
+    }
+
+    &__share {
+      display: none;
+    }
+
+  }
+
+  .sendInvoice-guide__update-card {
+    margin-bottom: 0;
+  }
+
+  .guide-tab {
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding: 5px 10px;
+    font-size: 12px;
+
+   
+
+  }
+
+  .guide-download-card {
+    align-items: stretch;
+    gap: 12px;
+    min-height: 132px;
+    padding: 12px;
+    border-radius: 8px;
+
+    &__cover {
+      flex-basis: 62px;
+      min-height: 92px;
+      padding: 7px 5px;
+      border-radius: 4px;
+
+      > img {
+        width: 31px;
+        margin-bottom: 9px;
+      }
+
+      > span:not(.guide-download-card__cover-badge) {
+        font-size: 7px;
+        line-height: 1.5;
+      }
+
+      &::before {
+        right: -15px;
+        bottom: -12px;
+        width: 48px;
+        height: 48px;
+      }
+
+      &::after {
+        right: 18px;
+        bottom: -14px;
+        width: 34px;
+        height: 34px;
+      }
+    }
+
+    &__cover-badge {
+      right: 5px;
+      bottom: 5px;
+      width: 17px;
+      height: 20px;
+      font-size: 6px;
+    }
+
+    &__content {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: flex-start;
+
+      h2 {
+        margin-bottom: 4px;
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      p {
+        display: -webkit-box;
+        overflow: hidden;
+        color: #898989;
+        font-size: 12px;
+        line-height: 1.65;
+        -webkit-box-orient: vertical;
+  
+      }
+    }
+
+    &__button {
+      width: auto;
+      height: 36px;
+      margin-top: auto;
+      padding: 4px 14px;
+      border-radius: 7px;
+      font-size: 12px;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .aparat-video {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 8px;
+
+    iframe {
+      border-radius: 7px;
+    }
+
+  }
+
+
+  .send-invoice-guide-shell {
+    background: #f7f7f7;
+  }
+
+  .senLink-guide-buttons {
+    flex-shrink: 0;
+    display: flex;
+    row-gap: 8px;
+    width: 100%;
+    margin: 0 !important;
+    padding: 10px var(--guide-page-gutter) max(16px, calc(16px + env(safe-area-inset-bottom, 0px)));
+    box-sizing: border-box;
+    border-top: 1px solid #f1f1f1;
+    background: rgba(255, 255, 255, 0.98);
+
+    > .ant-col {
+      padding-inline: 0 !important;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .ant-btn {
+      width: 100%;
+      height: 40px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    &__share {
+      border-color: $red-main !important;
+      color: $red-main !important;
+
+      &:hover {
+        border-color: $default-button-hover !important;
+        color: $default-button-hover !important;
+      }
+    }
+
+    &__download {
+      border-color: $red-main !important;
+      background: $red-main !important;
+      color: #fff !important;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+
+      &:hover {
+        border-color: $default-button-hover !important;
+        background: $default-button-hover !important;
+      }
+    }
+  }
+}

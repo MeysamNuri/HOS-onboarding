@@ -1,0 +1,225 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.package-page {
+    direction: rtl;
+    background: #f6f6f6;
+    min-height: 100vh;
+    padding: 18px 16px 30px;
+    position: relative;
+    font-family: "IRANYekanFN", Tahoma, sans-serif;
+
+    .top-bar {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 18px;
+        margin-top: 30px;
+
+        .close-btn {
+            border: none;
+            background: transparent;
+            font-size: 26px;
+            color: #8d8d8d;
+            cursor: pointer;
+            padding: 0;
+        }
+    }
+
+    .gray-box {
+        background-color: $gray-badge2;
+        padding: 10px;
+        width: 100%;
+
+    }
+
+    .order-rows {
+        margin-bottom: 10px;
+
+    }
+
+    .right-item {
+        text-align: right;
+    }
+
+    .left-item {
+        text-align: left;
+
+    }
+
+    .ant-card {
+        border-radius: 14px;
+        border: none;
+        background: $gray-badge2;
+        margin-bottom: 16px;
+        box-shadow: none;
+
+
+        .ant-card-body {
+            padding: 14px 16px;
+        }
+    }
+
+    .package-card {
+        .top-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .label {
+            font-size: 13px;
+            color: #676767;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .value {
+            font-size: 15px;
+            color: #222;
+            font-weight: 600;
+        }
+
+        .left {
+            text-align: right;
+
+            .sub {
+                font-size: 13px;
+                color: #707070;
+                margin-top: 2px;
+            }
+        }
+
+        .icon-box {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            border-radius: 10px;
+            border: 2px solid #d60000;
+            color: #d60000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .ant-divider {
+            margin: 12px 0;
+            border-color: #e1e1e1;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .price-label {
+                font-size: 14px;
+                color: #6b6b6b;
+            }
+
+            .price-value {
+                font-size: 15px;
+                font-weight: 600;
+                color: #444;
+            }
+        }
+    }
+
+    .details-card,
+    .factor-card {
+        .info-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+
+            span {
+                font-size: 14px;
+                color: #2d2d2d;
+            }
+
+            span:first-child {
+                color: #555;
+                font-weight: 500;
+            }
+
+            span:last-child {
+                font-weight: 600;
+                direction: rtl;
+            }
+        }
+
+        .copy-icon {
+            color: #d60000;
+            font-size: 16px;
+        }
+
+        .tracking-row {
+            align-items: center;
+
+            .tracking {
+                display: flex;
+                align-items: center;
+
+                gap: 8px;
+            }
+
+
+        }
+    }
+
+    .factor-card {
+        .collapse-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            padding-bottom: 10px;
+
+            span {
+                font-size: 15px;
+                font-weight: 600;
+                color: #444;
+            }
+
+            .arrow {
+                font-size: 12px;
+                color: #777;
+                transition: 0.25s;
+            }
+
+            .arrow.open {
+                transform: rotate(0deg);
+            }
+        }
+
+        .collapse-body {
+            padding-top: 4px;
+        }
+    }
+
+    .buttonContainer {
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+
+        .guide-btn {
+            width: 100%;
+            height: 54px;
+            border-radius: 12px;
+            background: #ff0000 !important;
+            border: none !important;
+            color: #fff !important;
+            font-size: $text-sm;
+            font-weight: 700;
+            box-shadow: none;
+
+            &:hover {
+                background: #ea0000 !important;
+            }
+        }
+    }
+
+}
+

@@ -1,0 +1,5 @@
+{
+  "baseUrl": "https://api.example.invalid/api",
+  "backUrl": "http://localhost:8080",
+  "demoHolooHamrah": "https://demo.example.invalid"
+}

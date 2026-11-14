@@ -1,0 +1,97 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.package-details-modal {
+    padding: 16px;
+
+    @media (min-width:768px) {
+        padding: 0 16px;
+
+    }
+
+    &__header {
+        align-items: baseline;
+
+        span {
+
+            color: $sub-text;
+
+            font-size: $text-sm;
+
+            font-weight: 500;
+            margin-right: 10px;
+
+        }
+    }
+
+    %unit {
+
+        padding: 8px;
+        border-radius: $radius-xs;
+        margin-bottom: 2px;
+
+        .price {
+            color: $sub-text;
+            font-size: $text-xs;
+            text-align: left;
+            padding: 0 12px;
+
+            .price-unit {
+                font-size: $text-xs;
+
+            }
+
+        }
+
+    }
+
+    .unit1 {
+        @extend %unit;
+        background: $pink-light;
+    }
+
+    .unit2 {
+        @extend %unit;
+        background: $gray-light2;
+
+        .title {
+            color: #4A4A4A;
+
+        }
+    }
+
+    .unit3 {
+        @extend %unit;
+        border-bottom: 2px solid $gray-medium;
+        border-radius: 0;
+
+        .title {
+            color: $sub-text;
+
+        }
+
+
+
+    }
+
+    .unit4 {
+        @extend %unit;
+        margin-bottom: 0;
+
+        .title {
+            color: $sub-text;
+
+        }
+
+        .badge {
+            background-color: #C60000;
+            color: white;
+            padding: 6px;
+            margin-left: 10px;
+            font-weight: 600;
+            border-radius: 50%;
+            font-size: $text-xs;
+        }
+
+
+    }
+}

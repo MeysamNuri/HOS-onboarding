@@ -1,0 +1,487 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.sidebar {
+    height: 100%;
+    background: $gray-light-disable;
+    direction: rtl;
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    &__toggle {
+        width: 32px;
+        height: 32px;
+        border: 1px solid #9d9d9d;
+        border-radius: 2px;
+        background: transparent;
+        @include flex-center;
+        @extend %clickable;
+        margin-top: 15px;
+
+        .anticon {
+            font-size: 14px;
+            color: $color-text-muted;
+        }
+    }
+
+    &__logo {
+        width: 100px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    &__logo-small {
+        width: 48px;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+/* ==========================================
+   EXPANDED PROFILE CARD
+========================================== */
+
+.profile-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+
+    &__top {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__avatar {
+        font-size: 42px;
+        color: #666;
+    }
+
+    &__content {
+        flex: 1;
+
+        p {
+            margin: 0;
+            color: #ed1c24;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        span {
+            color: #7a7a7a;
+            font-size: 12px;
+        }
+    }
+
+    &__edit {
+        font-size: 16px;
+        color: #777;
+        cursor: pointer;
+    }
+
+    &__serial {
+        margin-top: 14px;
+        background: #f2f2f2;
+        border-radius: 8px;
+        padding: 12px;
+        @include flex-between;
+
+        span {
+            color: #555;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .anticon {
+            color: $color-text-light;
+            font-size: 12px;
+        }
+    }
+}
+
+/* ==========================================
+   MENU ITEMS
+========================================== */
+.sub-menu-item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: right;
+    justify-content: space-between;
+    padding: 16px 0 16px 12px;
+    margin-right: 25px;
+    font-weight: 600;
+    color: $text-gray;
+    cursor: pointer;
+
+    &__active {
+    @extend %active-card;
+   padding: 10px;
+   margin: 5px;
+
+    }
+
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: right;
+
+    padding: 16px 6px;
+    cursor: pointer;
+    margin: 6px 0;
+    transition: all 0.2s ease;
+
+    .anticon {
+        font-size: 22px;
+        color: $icon-color;
+    }
+
+    span {
+        color: $color-text-primary;
+        font-size: $text-sm;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+
+    &:hover {
+
+        span,
+        .anticon {
+            color: $red-main;
+        }
+    }
+
+
+}
+
+.sub-menus {
+
+    padding: 0;
+
+    .ant-collapse-item-active {
+        .ant-collapse-header {
+            color: $red-main !important;
+
+        }
+    }
+
+    .ant-collapse-title {
+        font-size: 14px;
+
+    }
+
+    .ant-collapse-body {
+        background-color: #f5f5f5;
+        border-bottom: 1px solid $gray-medium;
+    }
+
+    .inner-links {
+        list-style: inside;
+        padding-right: 15px;
+
+        li {
+            margin-bottom: 30px;
+            cursor: pointer;
+
+            a {
+                color: #666;
+                text-decoration: none;
+                font-size: $text-sm;
+
+                &:hover {
+                    color: #d60000;
+                }
+            }
+        }
+    }
+
+    .box-underline {
+        border-bottom: 1px solid $gray-medium;
+
+    }
+
+    .assistant-box {
+        width: 100%;
+        color: $gray-text;
+        padding: 0px 14px 10px 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: $text-md;
+        margin-bottom: 16px;
+
+        .pending-badge {
+            background-color: $gray-badge;
+            padding-left: 12px;
+            border-radius: $radius-sm;
+            display: inline-flex;
+            align-items: center;
+            margin-left: 16px
+        }
+    }
+}
+
+.menu-item--active {
+    @extend %active-card;
+    border-radius: $radius-xs;
+    border-inline-start: 2px solid $gray-text;
+
+    span,
+    .anticon {
+        color: $red-main;
+    }
+}
+
+.sidebar-icon.is-active {
+
+
+    background: #fff;
+    border-radius: $radius-xs;
+    border-inline-start: 2px solid $gray-text;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 1px 3px rgba(0, 0, 0, 0.05);
+
+    .anticon,
+    & {
+        color: $red-main;
+    }
+
+    &:hover {
+        transform: none;
+    }
+}
+
+/* ==========================================
+   SUB MENU
+========================================== */
+
+.submenu {
+    padding: 8px;
+
+    &__title {
+        color: #ed1c24;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+
+    ul {
+        padding-right: 18px;
+        margin: 0;
+
+        li {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+    }
+}
+
+.submenu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+        color: #555;
+        font-size: 15px;
+    }
+
+    .ant-tag {
+        border-radius: 16px;
+        border: none;
+        background: #f0f0f0;
+        color: #777;
+        padding-inline: 10px;
+    }
+}
+
+/* ==========================================
+   COLLAPSED SIDEBAR
+========================================== */
+
+.sidebar--collapsed {
+    height: 100%;
+    background: #f5f5f5;
+    padding: 8px 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    .sidebar__header {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+}
+
+.sidebar__collapsed-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+}
+
+/* ==========================================
+   COLLAPSED PROFILE
+========================================== */
+
+.collapsed-profile {
+    width: 72px;
+    height: 104px;
+    background: #fafafa;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .anticon {
+        font-size: 42px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    &__serial {
+        background: #ececec;
+        border-radius: 6px;
+        padding: 6px 8px;
+
+        min-width: 42px;
+        text-align: center;
+
+        color: #666;
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
+/* ==========================================
+   COLLAPSED ICONS
+========================================== */
+
+.sidebar-icon {
+    font-size: 22px;
+    color: #444;
+
+    @extend %clickable;
+
+
+
+
+}
+
+/* ==========================================
+   RED LINK CARD
+========================================== */
+
+.collapsed-link {
+    width: 72px;
+    height: 54px;
+
+    background: #fff;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        1px 0 0 rgba(0, 0, 0, 0.2);
+
+    .anticon {
+        font-size: 22px;
+        color: #ed1c24;
+    }
+}
+
+/* ==========================================
+   ANT DESIGN OVERRIDES
+========================================== */
+
+.sidebar,
+.sidebar--collapsed {
+    .ant-layout-sider {
+        background: $color-bg;
+    }
+}
+
+.ant-layout-sider-children {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.ant-divider {
+    margin: 12px 0;
+}
+
+.ant-layout-sider-trigger {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        --sidebar-padding-right: max(16px, env(safe-area-inset-right, 0px));
+        --sidebar-padding-left: max(16px, env(safe-area-inset-left, 0px));
+        padding-top: 0;
+        padding-right: var(--sidebar-padding-right);
+        padding-left: var(--sidebar-padding-left);
+        padding-bottom: 32px;
+        padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+        scroll-padding-bottom: 32px;
+        scroll-padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: touch;
+
+        > * {
+            flex-shrink: 0;
+        }
+
+        &__header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            width: calc(100% + var(--sidebar-padding-right) + var(--sidebar-padding-left));
+            margin-right: calc(0px - var(--sidebar-padding-right));
+            margin-left: calc(0px - var(--sidebar-padding-left));
+            padding: 12px var(--sidebar-padding-right) 12px var(--sidebar-padding-left);
+            background: transparent;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+            &--scrolled {
+                background: rgba(255, 255, 255, 0.94);
+                -webkit-backdrop-filter: blur(12px);
+                backdrop-filter: blur(12px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            }
+        }
+
+        &__toggle {
+            margin-top: 0;
+        }
+    }
+}

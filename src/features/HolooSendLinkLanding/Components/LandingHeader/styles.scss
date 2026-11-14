@@ -1,0 +1,331 @@
+.holoo-landing-header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+
+  button {
+    border: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  &__bar {
+    display: grid;
+    width: var(--landing-content-width);
+    min-height: 48px;
+    margin: 9px auto 0;
+    padding: 4px 10px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 22px;
+    border: 1px solid rgba(33, 33, 33, 0.08);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 6px rgba(44, 44, 44, 0.08);
+  }
+
+  &__brand {
+    display: grid;
+    padding: 2px 0;
+    place-items: center;
+
+    img {
+      display: block;
+      width: 27px;
+      height: auto;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(26px, 3vw, 44px);
+    transform: translateX(28px);
+  }
+
+  &__nav-item {
+    padding: 9px 2px;
+    color: #858585;
+    font-size: clamp(10px, 0.88vw, 13px);
+    white-space: nowrap;
+
+    &:hover,
+    &--active {
+      color: #ed1c24;
+    }
+
+    &--active {
+      font-weight: 700;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    margin-left: 12px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__packages-button {
+    display: inline-flex;
+    min-width: clamp(160px, 15vw, 218px);
+    min-height: 36px;
+    padding: 3px 7px 3px 11px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px !important;
+    background: #eff9ff !important;
+    box-shadow: 0 2px 7px rgba(52, 137, 184, 0.25);
+    color: #363636;
+    font-size: clamp(10px, 0.88vw, 13px) !important;
+    white-space: nowrap;
+  }
+
+  &__avatar {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1.5px solid #ed1c24;
+    border-radius: 50%;
+    background: #fff;
+    color: #bbb;
+  }
+
+  &__packages-arrow--desktop {
+    color: #6f7780;
+    font-size: 9px;
+  }
+
+  &__packages-arrow--mobile,
+  &__mobile-topbar,
+  &__mobile-toggle {
+    display: none;
+  }
+
+  &__nav-item:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  &__login-button {
+    display: inline-flex;
+    min-width: 104px;
+    padding: 9px 3px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #ed1c24;
+    font-size: clamp(10px, 0.88vw, 13px) !important;
+    font-weight: 700 !important;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1050px) {
+  .holoo-landing-header {
+    &__bar {
+      gap: 12px;
+    }
+
+    &__navigation {
+      gap: 12px;
+      transform: none;
+    }
+
+    &__nav-item {
+      font-size: 9px;
+    }
+
+    &__actions {
+      margin-left: 0;
+    }
+
+    &__packages-button,
+    &__login-button {
+      min-width: 0;
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .holoo-landing-header {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    background: #fff;
+
+    &__mobile-topbar {
+      display: flex;
+      min-height: 64px;
+      padding: 8px 16px;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      background: #fff;
+    }
+
+    &__mobile-brand {
+      display: grid;
+      place-items: center;
+
+      img {
+        display: block;
+        width: 30px;
+        height: auto;
+      }
+    }
+
+    &__mobile-login {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #ed1c24;
+      font-size: 12px !important;
+      font-weight: 700 !important;
+    }
+
+    &__bar {
+      display: flex;
+      width: 100%;
+      min-height: 49px;
+      margin: 0;
+      padding: 6px 16px;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      border: 0;
+      border-radius: 0;
+      background: #fff1f3;
+      box-shadow: 0 -1px 7px rgba(78, 45, 50, 0.05);
+    }
+
+    &__brand,
+    &__login-button {
+      display: none;
+    }
+
+    &__mobile-toggle {
+      display: grid;
+      order: 0;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      color: #5d5d5d;
+      font-size: 21px !important;
+    }
+
+    &__actions {
+      order: 1;
+    }
+
+    &__packages-button {
+      min-width: 174px;
+      min-height: 36px;
+      padding: 3px 7px 3px 10px;
+      gap: 7px;
+      border-radius: 8px !important;
+      font-size: 12px !important;
+    }
+
+    &__avatar {
+      width: 28px;
+      height: 28px;
+      font-size: 13px;
+    }
+
+    &__packages-arrow--desktop {
+      display: none;
+    }
+
+    &__packages-arrow--mobile {
+      display: inline-flex;
+      margin-right: auto;
+      color: #4c535a;
+      font-size: 9px;
+    }
+
+    &__navigation {
+      position: absolute;
+      z-index: 20;
+      top: 100%;
+      right: 14px;
+      left: 14px;
+      display: none;
+      padding: 10px;
+      align-items: stretch;
+      flex-direction: column;
+      gap: 2px;
+      border: 1px solid rgba(33, 33, 33, 0.08);
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(30, 30, 30, 0.12);
+      transform: none;
+
+      &--open {
+        display: flex;
+      }
+    }
+
+    &__nav-item {
+      width: 100%;
+      padding: 11px 12px !important;
+      border-radius: 7px !important;
+      font-size: 13px;
+      text-align: right;
+
+      &:hover,
+      &--active {
+        background: #fff3f4 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .holoo-landing-header {
+    &__mobile-topbar {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
+    &__bar {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
+    &__packages-button {
+      min-width: min(174px, calc(100vw - 78px));
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .holoo-landing-header {
+    &__mobile-topbar {
+      min-height: 60px;
+      padding-right: 14px;
+      padding-left: 14px;
+    }
+
+    &__mobile-brand img {
+      width: 28px;
+    }
+
+    &__mobile-login {
+      font-size: 12px !important;
+    }
+
+    &__packages-button {
+      font-size: 10px !important;
+    }
+  }
+}

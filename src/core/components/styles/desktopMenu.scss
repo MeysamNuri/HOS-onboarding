@@ -1,0 +1,146 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.nav-item-has-submenu {
+    position: relative;
+
+    .submenu-trigger {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+
+        &:hover {
+            .submenu-arrow {
+                transform: rotate(180deg);
+                transition: .8s;
+            }
+        }
+    }
+
+    .submenu-arrow {
+        font-size: 12px;
+
+    }
+
+    .services-submenu {
+        position: absolute;
+        top: 55px;
+        right: 0;
+        width: 520px;
+        min-height: 320px;
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+
+        display: flex;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+
+        transition: all 0.25s ease;
+
+        z-index: 999;
+    }
+
+    .services-submenu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .submenu-right {
+        width: 180px;
+        background: $main-gray;
+        border-left: 1px solid #ececec;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                padding: 18px 20px;
+                cursor: pointer;
+                transition: 0.2s;
+                color: $red-main;
+                margin: 10px;
+                font-weight: 700;
+
+                &:hover {
+                    background: #f1f1f1;
+                }
+
+                &.active {
+                    background-color: white;
+                    border-radius: $radius-sm;
+                    border-right: 2px solid $gray-text;
+
+                }
+            }
+        }
+    }
+
+    .submenu-left {
+        flex: 1;
+        padding: 18px;
+        background: #fff;
+
+        .ant-collapse-header {
+            background-color: white !important;
+            padding: 10px !important;
+
+        }
+
+        .ant-collapse-title {
+            font-size: 14px;
+
+        }
+
+        .ant-collapse-body {
+            background-color: unset;
+            border-bottom: 1px solid $gray-medium;
+        }
+
+        .inner-links {
+            list-style: inside;
+            padding-right: 15px;
+
+            li {
+                margin-bottom: 14px;
+
+                a {
+                    color: #666;
+                    text-decoration: none;
+                    font-size: 13px;
+
+                    &:hover {
+                        color: #d60000;
+                    }
+                }
+            }
+        }
+
+        .assistant-box {
+            width: 100%;
+            background: #f1f1f1;
+            border-radius: 10px;
+            padding: 10px 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 8px;
+            font-size: 13px;
+            margin-bottom:16px;
+
+            .pending-badge {
+                background-color: $gray-badge;
+                padding-left: 12px;
+                border-radius: 8px;
+                display: inline-flex;
+                align-items: center
+            }
+        }
+    }
+}

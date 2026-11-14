@@ -1,0 +1,78 @@
+.confirmation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.content {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.confirmation-title {
+    color: #333;
+    margin: 20px 0;
+
+}
+ .close-modal-icon{
+        padding: 16px;
+     }
+
+@media (max-width: 768px) {
+    //inovice modal style=============
+
+    .ant-modal {
+        vertical-align: bottom !important;
+    }
+
+    .confirmation-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // height: 90vh;
+
+        // padding: 20px;
+    
+
+    }
+
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center
+    }
+
+
+
+    .checkmark {
+
+        border-radius: 50%;
+        padding: 20px;
+        margin-bottom: 20px;
+
+    }
+
+    .check-icon {
+        font-size: 48px;
+        color: #4CAF50;
+    }
+
+    .confirmation-title {
+        color: #333;
+        margin: 20px 0;
+
+    }
+
+    .confirmation-text {
+        color: #555;
+        text-align: center;
+
+
+    }
+}

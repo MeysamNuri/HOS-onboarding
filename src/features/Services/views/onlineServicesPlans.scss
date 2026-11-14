@@ -1,0 +1,57 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.holoo-sections {
+    .plans-title {
+        font-size: 32px;
+    }
+
+}
+.agent-mobile{
+    background: $pink-main;
+        display: flex;
+        padding: 12px;
+        border-radius: $radius-sm;
+         &__items{
+        margin-right: 10px;
+         .agent-code{
+            padding-top: 10px;
+            color: $gray-text;
+        }
+      
+    }
+}
+.agent-box {
+
+    position: relative;
+
+    &__text {
+        background: white;
+        padding: 15px 12px;
+        position: absolute;
+ 
+        left: 30px;
+        top: 16px;
+        bottom: 16px;
+        border-radius: $radius-sm ;
+        display: flex;
+
+    }
+    &__items{
+        margin-right: 10px;
+         .agent-code{
+            padding-top: 10px;
+            color: $gray-text;
+        }
+      
+    }
+   
+}
+
+@media (max-width: 991px) {
+    .holoo-sections {
+        .plans-title {
+            font-size: 16px;
+        }
+
+    }
+}

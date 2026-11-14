@@ -1,0 +1,24 @@
+<svg width="561" height="501" viewBox="0 0 561 501" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0.5"
+    y="17.4277"
+    width="501.657"
+    height="482.924"
+    rx="241.462"
+    stroke="url(#line-gradient)"
+    stroke-dasharray="10 10"
+  />
+  <defs>
+    <linearGradient
+      id="line-gradient"
+      x1="517.17"
+      y1="304"
+      x2="9.1699"
+      y2="296.5"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#7A7A7A" />
+      <stop offset="0.790706" stop-color="#E0E0E0" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+</svg>

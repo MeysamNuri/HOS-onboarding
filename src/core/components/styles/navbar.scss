@@ -1,0 +1,242 @@
+@use "@/core/assets/styles/stylesVariables.scss" as *;
+
+// ========================================
+// Variables
+// ========================================
+
+$navbar-breakpoint: 992px;
+
+// ========================================
+// Header
+// ========================================
+
+.navbar-header {
+  width: 100%;
+  height: auto !important;
+  line-height: normal !important;
+  background-color: $main-gray !important;
+  border-bottom: 1px solid #e5e7eb;
+
+  // Ant Design Layout Header
+  &.ant-layout-header {
+    height: auto !important;
+    padding: 0 !important;
+
+    @media (max-width: ($navbar-breakpoint - 1px)) {
+      padding: 16px 16px 0 !important;
+      padding:
+        calc(16px + env(safe-area-inset-top, 0px))
+        max(16px, env(safe-area-inset-right, 0px))
+        0
+        max(16px, env(safe-area-inset-left, 0px)) !important;
+    }
+  }
+}
+
+// ========================================
+// Navbar
+// ========================================
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (min-width: $navbar-breakpoint) {
+    max-width: 1210px;
+    margin: 16px auto;
+    padding: 0 24px 0 24px;
+
+
+  }
+}
+
+// ========================================
+// Left Section
+// ========================================
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  min-width: 0;
+
+  @media (max-width: ($navbar-breakpoint - 1px)) {
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}
+
+// ========================================
+// Navigation Menus
+// ========================================
+
+.nav-menu,
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+
+  font-size: 14px;
+  list-style: none;
+}
+
+// ========================================
+// Navigation Links
+// ========================================
+
+.nav-link {
+  padding-bottom: 4px;
+
+  color: $gray-text;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    color: $default-button-hover;
+  }
+
+  &.active {
+    color: #000;
+    font-weight: 700;
+  }
+
+  // BI special active state
+  &--bi.active {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+  }
+}
+
+// ========================================
+// Disabled Link
+// ========================================
+
+.disable-link {
+  color: $gray-badge-second;
+
+  &:hover {
+    color: $gray-badge-second;
+  }
+}
+
+// ========================================
+// Login Button
+// ========================================
+
+.login-button {
+  color: $red-main !important;
+
+  &:hover {
+    color: $default-button-hover !important;
+  }
+}
+
+// ========================================
+// Username
+// ========================================
+
+.username-button {
+  margin-right: 10px;
+
+  color: $active-button;
+  font-weight: 700;
+}
+
+.username-dropDown {
+  color: $red-main;
+}
+
+// ========================================
+// Username Arrow
+// ========================================
+
+.username-arrow {
+  color: $red-main;
+
+  transition: transform 0.3s ease;
+}
+
+.ant-dropdown-trigger:hover {
+  .username-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+// ========================================
+// Mobile Only
+// ========================================
+
+.mobile-only {
+  display: block;
+
+  @media (min-width: $navbar-breakpoint) {
+    display: none;
+  }
+}
+
+// ========================================
+// Mobile Username Info
+// ========================================
+
+.mobile-username-info {
+  padding: 12px;
+
+  background-color: $gray-medium;
+  border-radius: $radius-sm;
+}
+
+// ========================================
+// Desktop Only
+// ========================================
+
+.desktop-only {
+  display: none;
+  @media (min-width: $navbar-breakpoint) {
+    display: flex;
+    align-items: center;
+
+  }
+}
+
+// ========================================
+// Login Icon
+// ========================================
+
+.login-icon {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  cursor: pointer;
+
+  .anticon {
+    font-size: 22px;
+    color: $icon-color;
+  }
+
+  span {
+    margin-right: 10px;
+
+    color: $color-text-primary;
+    font-size: $text-sm;
+    font-weight: 600;
+  }
+}
+
+// ========================================
+// Navbar Dropdown
+// ========================================
+//
+// Scope this if the dropdown is rendered inside .navbar.
+// This prevents changing every Ant Design dropdown
+// throughout the application.
+//

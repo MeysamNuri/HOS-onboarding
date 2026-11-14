@@ -1,0 +1,390 @@
+@use '@/core/assets/styles/stylesVariables.scss' as *;
+
+.bi-activation-guide {
+    color: #1f1f1f;
+
+    .header-container {
+        margin-bottom: 0;
+    }
+
+    .header-title-wrapper {
+        > img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .page-title {
+            color: #1f1f1f;
+            font-size: 16px;
+            font-weight: 700;
+        }
+    }
+
+    &__hero {
+        display: flex;
+        width: auto;
+        min-width: 0;
+        max-width: 100%;
+        height: 384px;
+        margin: -4px 16px 0;
+        padding: 24px 40px 22px;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        text-align: center;
+        background: #f7f7f7;
+        border-radius: 12px;
+    }
+
+    &__notice {
+        display: flex;
+        width: min(740px, 100%);
+        min-width: 0;
+        min-height: 40px;
+        padding: 7px 22px;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        color: #3f3f3f;
+        font-size: 14px;
+        line-height: 1.8;
+        background: #ffebeb;
+        border-radius: 999px;
+
+        .anticon {
+            flex: 0 0 auto;
+            color: #222;
+            font-size: 22px;
+            transform: rotate(45deg);
+        }
+
+        p {
+            min-width: 0;
+            margin: 0;
+            overflow-wrap: anywhere;
+        }
+
+        strong {
+            color: #161616;
+            font-weight: 700;
+        }
+    }
+
+    &__hourglass {
+        display: block;
+        width: 230px;
+        height: auto;
+        margin-top: 27px;
+        flex: 0 0 auto;
+        object-fit: contain;
+    }
+
+    &__title {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        margin: 9px 0 0;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        color: #101010;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.65;
+
+        .anticon {
+            flex: 0 0 auto;
+            color: $red-main;
+            font-size: 25px;
+            transform: rotate(45deg);
+        }
+
+        span {
+            min-width: 0;
+            overflow-wrap: anywhere;
+        }
+    }
+
+    &__description {
+        width: 100%;
+        min-width: 0;
+        margin-top: 5px !important;
+        overflow-wrap: anywhere;
+        color: #8b8b8b;
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    &__features {
+        min-width: 0;
+        margin: 24px 16px 0;
+    }
+
+    &__features-header {
+        min-width: 0;
+        text-align: right;
+
+        h2 {
+            margin: 0;
+            color: #171717;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.7;
+        }
+
+        p {
+            margin-top: 3px !important;
+            color: #8b8b8b;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+    }
+
+    &__features-layout {
+        display: grid;
+        margin-top: 0;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas: "visual list";
+        align-items: start;
+        column-gap: 74px;
+        direction: ltr;
+    }
+
+    &__visual {
+        grid-area: visual;
+        min-width: 0;
+        margin-top: -55px;
+
+        picture {
+            display: block;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+            margin: 0 auto 0 0;
+            object-fit: contain;
+        }
+    }
+
+    &__feature-list {
+        display: flex;
+        margin: 14px 0 0;
+        padding: 0;
+        grid-area: list;
+        flex-direction: column;
+        gap: 18px;
+        color: #545454;
+        font-size: 14px;
+        line-height: 1.8;
+        list-style: none;
+        direction: rtl;
+
+        li {
+            display: flex;
+            min-width: 0;
+            min-height: 36px;
+            align-items: center;
+            gap: 14px;
+
+            > span:last-child {
+                min-width: 0;
+                overflow-wrap: anywhere;
+            }
+        }
+    }
+
+    &__feature-icon {
+        display: inline-flex;
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+        align-items: center;
+        justify-content: center;
+        color: $red-main;
+        font-size: 19px;
+        background: #f6f6f6;
+        border-radius: 50%;
+    }
+}
+
+@media (max-width: 991px) {
+    body.bi-guide-page .navbar-header {
+        display: none;
+    }
+
+    .bi-activation-guide {
+        width: calc(100% - 32px);
+        max-width: calc(100% - 32px);
+        margin: 16px auto;
+
+        .header-container {
+            margin-bottom: 12px;
+        }
+
+        .header-title-wrapper {
+            transform: translateY(10px);
+
+            > img {
+                width: 28px;
+                height: 28px;
+            }
+
+            .page-title {
+                padding: 12px 5px;
+                font-size: 16px;
+            }
+        }
+
+        &__hero {
+            height: auto;
+            min-height: 327px;
+            margin: 0;
+            padding: 12px 8px 7px;
+            border-radius: 9px;
+        }
+
+        &__notice {
+            width: 100%;
+            min-height: 82px;
+            padding: 1px 13px;
+            gap: 13px;
+            font-size: 14px;
+            line-height: 1.9;
+
+            .anticon {
+                font-size: 25px;
+            }
+        }
+
+        &__hourglass {
+            width: 160px;
+            margin-top: -4px;
+        }
+
+        &__title {
+            position: relative;
+            display: block;
+            margin-top: 15px;
+            padding: 0 8px;
+            font-size: 17px;
+            line-height: 1.45;
+
+            .anticon {
+             
+                margin-left: 6px;
+                font-size: 23px;
+            }
+        }
+
+        &__description {
+            margin-top: 8px !important;
+            font-size: 15px;
+            line-height: 1.35;
+        }
+
+        &__features {
+            margin: 8px 0 0;
+        }
+
+        &__features-header {
+            h2 {
+                font-size: 17px;
+                line-height: 1.5;
+            }
+
+            p {
+                margin-top: 7px !important;
+                font-size: 15px;
+            }
+        }
+
+        &__features-layout {
+            display: flex;
+            width: 100%;
+            min-width: 0;
+            margin-top: 0;
+            flex-direction: column;
+            gap: 0;
+            direction: rtl;
+        }
+
+        &__visual {
+            width: 100%;
+            min-width: 0;
+            margin-top: 0;
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        &__feature-list {
+            width: 100%;
+            margin-top: 9px;
+            gap: 8px;
+            font-size: 15px;
+            line-height: 1.5;
+
+            li {
+                min-height: 37px;
+                gap: 12px;
+            }
+        }
+
+        &__feature-icon {
+            width: 32px;
+            height: 32px;
+            flex-basis: 32px;
+            font-size: 17px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .bi-activation-guide {
+        .header-title-wrapper .page-title {
+            font-size: 17px;
+        }
+
+        &__notice {
+            font-size: 14px;
+        }
+
+        &__title {
+            font-size: clamp(16px, 4.8vw, 16px);
+        }
+
+        &__description,
+        &__features-header p,
+        &__feature-list {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .bi-activation-guide {
+        &__hero {
+            padding-inline: 8px;
+        }
+
+        &__notice {
+            padding-inline: 13px;
+            gap: 9px;
+            font-size: 14px;
+        }
+
+        &__title {
+            gap: 7px;
+        }
+
+        &__feature-list {
+            font-size: 14px;
+        }
+    }
+}
